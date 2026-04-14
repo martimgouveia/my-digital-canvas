@@ -11,21 +11,21 @@ const Antiglifo = () => {
   return (
     <>
       <Header />
-      <div className="pt-24 px-8 pb-16 max-w-5xl mx-auto">
-        <h1 className="text-3xl md:text-5xl font-light tracking-widest text-foreground mb-4">
+      <div className="pt-24 px-5 pb-16 max-w-[1000px] mx-auto text-center">
+        <h1 className="text-4xl font-normal text-foreground mb-5">
           antiglifo
         </h1>
-        <h2 className="text-lg italic text-muted-foreground mb-4">
+        <h2 className="text-2xl italic text-foreground/80 mb-5">
           Analógico. Em fotografia e texto.
         </h2>
-        <p className="text-sm text-muted-foreground mb-12 max-w-xl">
+        <p className="text-base text-foreground leading-relaxed mb-10 max-w-[700px] mx-auto">
           antiglifo é um projeto que combina fotografia analógica com texto. Por enquanto
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 max-w-[1000px] mx-auto px-5">
           {entries.map((entry) => (
-            <Link key={entry.id} to={entry.to} className="block aspect-square overflow-hidden bg-secondary group">
-              <div className="w-full h-full flex items-center justify-center bg-secondary group-hover:bg-muted transition-colors">
+            <Link key={entry.id} to={entry.to} className="block overflow-hidden group">
+              <div className="aspect-square bg-secondary flex items-center justify-center group-hover:opacity-70 transition-opacity">
                 <span className="text-muted-foreground text-sm">{entry.id}</span>
               </div>
             </Link>
