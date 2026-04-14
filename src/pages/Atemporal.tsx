@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
+import atemporal1 from "@/assets/fotografia/atemporal1.jpg";
+import atemporal2 from "@/assets/fotografia/atemporal2.jpg";
 
 const slides = [
-  { caption: "Suspensas e pendentes, com pesos distintos, ainda permanecem algumas." },
-  { caption: "Efetivamente, não é de ninguém. Eventualmente, já não sei." },
-  { caption: "Frase da imagem 3" },
+  { image: atemporal1, caption: "Suspensas e pendentes, com pesos distintos, ainda permanecem algumas." },
+  { image: atemporal2, caption: "Efetivamente, não é de ninguém. Eventualmente, já não sei." },
 ];
 
 const Atemporal = () => {
@@ -24,9 +25,7 @@ const Atemporal = () => {
         </p>
 
         <div className="relative">
-          <div className="aspect-[4/3] bg-secondary flex items-center justify-center">
-            <span className="text-muted-foreground text-sm">atemporal{current + 1}.jpg</span>
-          </div>
+          <img src={slides[current].image} alt={`atemporal ${current + 1}`} className="w-full h-auto" />
           <p className="text-center text-sm text-muted-foreground mt-4 italic">
             {slides[current].caption}
           </p>
