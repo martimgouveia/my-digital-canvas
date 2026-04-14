@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { Instagram, Youtube, Mail } from "lucide-react";
+import background from "@/assets/background.jpeg";
 
 const Index = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background relative">
-      {/* Dark overlay placeholder for background image */}
-      <div className="absolute inset-0 bg-secondary/50" />
+      <img src={background} alt="" className="absolute inset-0 w-full h-full object-cover opacity-60" />
 
       <div className="relative z-10 text-center">
         <h1 className="text-4xl md:text-6xl font-light tracking-widest text-foreground mb-8">
