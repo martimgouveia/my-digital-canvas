@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import img0002 from "@/assets/antiglifo/0002.JPG";
 
 const Antiglifo0003 = () => {
   return (
@@ -13,9 +14,7 @@ const Antiglifo0003 = () => {
             </p>
           </div>
           <div className="md:w-2/5">
-            <div className="aspect-[3/4] bg-secondary flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">0003.jpg</span>
-            </div>
+            <img src={img0002} alt="0003" className="w-full h-auto" />
           </div>
         </div>
       </div>
