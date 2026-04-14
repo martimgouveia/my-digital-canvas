@@ -36,6 +36,18 @@ const Atemporal = () => {
             <ChevronRight size={32} />
           </button>
         </div>
+
+        <section className="mt-16">
+          <h2 className="text-xl font-normal text-foreground mb-6">Exposição</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="aspect-[4/3] bg-secondary flex items-center justify-center">
+              <span className="text-muted-foreground text-sm">foto exposição 1</span>
+            </div>
+            <div className="aspect-[4/3] bg-secondary flex items-center justify-center">
+              <span className="text-muted-foreground text-sm">foto exposição 2</span>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

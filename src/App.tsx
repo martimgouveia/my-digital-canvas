@@ -12,6 +12,7 @@ import Antiglifo0002 from "./pages/Antiglifo0002";
 import Antiglifo0003 from "./pages/Antiglifo0003";
 import Ilha from "./pages/Ilha";
 import Atemporal from "./pages/Atemporal";
+import Samouco from "./pages/Samouco";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/filme/ilha" element={<Ilha />} />
           <Route path="/fotografia" element={<Fotografia />} />
           <Route path="/fotografia/atemporal" element={<Atemporal />} />
+          <Route path="/fotografia/samouco" element={<Samouco />} />
           <Route path="/antiglifo" element={<Antiglifo />} />
           <Route path="/antiglifo/0001" element={<Antiglifo0001 />} />
           <Route path="/antiglifo/0002" element={<Antiglifo0002 />} />

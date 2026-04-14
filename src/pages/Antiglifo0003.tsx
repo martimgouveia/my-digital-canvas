@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import img0002 from "@/assets/antiglifo/0002.JPG";
+import img0003 from "@/assets/antiglifo/0003.JPG";
 
 const Antiglifo0003 = () => {
   return (
@@ -14,7 +14,7 @@ const Antiglifo0003 = () => {
             </p>
           </div>
           <div className="flex-1">
-            <img src={img0002} alt="0003" className="w-full" />
+            <img src={img0003} alt="0003" className="w-full" />
           </div>
         </div>
       </div>
