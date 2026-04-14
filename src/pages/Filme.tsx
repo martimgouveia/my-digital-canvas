@@ -1,12 +1,16 @@
 import Header from "@/components/Header";
 import ProjectCard from "@/components/ProjectCard";
+import flores from "@/assets/filme/flores.jpg";
+import mindthegap from "@/assets/filme/mindthegapcover.png";
+import ateamaresubir from "@/assets/filme/ateamaresubir.jpg";
+import ilha from "@/assets/filme/ilhacover.png";
 
 const projects = [
-  { to: "#", title: "Flores", year: "2026" },
+  { to: "#", title: "Flores", year: "2026", image: flores },
   { to: "#", title: "KAEL (unreleased)", year: "2026" },
-  { to: "#", title: "mind the gap", year: "2025" },
-  { to: "#", title: "Até a Maré Subir (unreleased)", year: "2025" },
-  { to: "/filme/ilha", title: "ilha", year: "2024" },
+  { to: "#", title: "mind the gap", year: "2025", image: mindthegap },
+  { to: "#", title: "Até a Maré Subir (unreleased)", year: "2025", image: ateamaresubir },
+  { to: "/filme/ilha", title: "ilha", year: "2024", image: ilha },
 ];
 
 const Filme = () => {

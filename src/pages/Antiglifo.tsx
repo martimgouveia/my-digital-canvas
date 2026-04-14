@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 
 const entries = [
-  { id: "0003", to: "#" },
-  { id: "0002", to: "#" },
+  { id: "0003", to: "/antiglifo/0003" },
+  { id: "0002", to: "/antiglifo/0002" },
   { id: "0001", to: "/antiglifo/0001" },
 ];
 

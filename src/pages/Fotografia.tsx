@@ -1,9 +1,11 @@
 import Header from "@/components/Header";
 import ProjectCard from "@/components/ProjectCard";
+import samouco from "@/assets/fotografia/samouco.jpg";
+import atemporal from "@/assets/fotografia/atemporal.jpg";
 
 const projects = [
-  { to: "#", title: "SAMOUCO - O FIM DO MUNDO", year: "2026" },
-  { to: "/fotografia/atemporal", title: "ATEMPORAL", year: "2025" },
+  { to: "#", title: "SAMOUCO - O FIM DO MUNDO", year: "2026", image: samouco },
+  { to: "/fotografia/atemporal", title: "ATEMPORAL", year: "2025", image: atemporal },
   { to: "#", title: "CONNECT FEST 28/11/2024", year: "2024" },
 ];
 
