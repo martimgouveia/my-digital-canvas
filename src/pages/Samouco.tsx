@@ -11,7 +11,10 @@ const Samouco = () => {
         </p>
 
         <section className="mb-16">
-          <h2 className="text-xl font-normal text-foreground mb-6">Trabalho</h2>
+          <h2 className="text-xl font-normal text-foreground mb-4">Trabalho</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl">
+            Uma série fotográfica que documenta o Samouco, explorando a sua paisagem, os seus habitantes e a relação com o estuário do Tejo — um lugar onde o tempo parece suspender-se no fim do mundo.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="aspect-[4/3] bg-secondary flex items-center justify-center">
               <span className="text-muted-foreground text-sm">foto 1</span>
