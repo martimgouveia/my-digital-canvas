@@ -26,7 +26,10 @@ const Samouco = () => {
         </section>
 
         <section>
-          <h2 className="text-xl font-normal text-foreground mb-6">Exposição</h2>
+          <h2 className="text-xl font-normal text-foreground mb-4">Exposição</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl">
+            A exposição apresentou o trabalho fotográfico num espaço que convidava à contemplação, permitindo ao público mergulhar na atmosfera singular do Samouco e refletir sobre a passagem do tempo neste território à margem.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="aspect-[4/3] bg-secondary flex items-center justify-center">
               <span className="text-muted-foreground text-sm">foto exposição 1</span>
