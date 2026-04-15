@@ -42,7 +42,9 @@ const Samouco = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {expoImages.map((img, i) => (
-              <img key={i} src={img} alt={`Exposição Samouco ${i + 1}`} className="w-full h-auto" />
+              <div key={i} className="aspect-[4/3] overflow-hidden">
+                <img src={img} alt={`Exposição Samouco ${i + 1}`} className="w-full h-full object-cover" />
+              </div>
             ))}
           </div>
         </section>
