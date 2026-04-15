@@ -38,7 +38,10 @@ const Atemporal = () => {
         </div>
 
         <section className="mt-16">
-          <h2 className="text-xl font-normal text-foreground mb-6">Exposição</h2>
+          <h2 className="text-xl font-normal text-foreground mb-4">Exposição</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl">
+            A exposição "Atemporal" foi apresentada num espaço escuro e imersivo, onde os visitantes puderam interagir com as fotografias iluminadas por uma luz singular. As frases manuscritas, invisíveis à primeira vista, revelavam-se apenas sob esta luz, acrescentando camadas de interpretação à experiência.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="aspect-[4/3] bg-secondary flex items-center justify-center">
               <span className="text-muted-foreground text-sm">foto exposição 1</span>
