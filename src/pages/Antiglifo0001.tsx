@@ -14,7 +14,7 @@ const Antiglifo0001 = () => {
             </p>
           </div>
           <div className="flex-1">
-            <img src={img0001} alt="0001" className="w-full" />
+            <LightboxImage src={img0001} alt="0001" className="w-full" />
           </div>
         </div>
       </div>

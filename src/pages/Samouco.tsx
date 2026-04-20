@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import LightboxImage from "@/components/LightboxImage";
 import expo1 from "@/assets/samouco/expo1.jpg";
 import expo2 from "@/assets/samouco/expo2.jpg";
 import expo3 from "@/assets/samouco/expo3.jpg";
@@ -15,14 +16,14 @@ const Samouco = () => {
     <>
       <Header />
       <div className="pt-24 px-5 pb-16 max-w-[1000px] mx-auto">
-        <h1 className="text-3xl font-normal text-foreground mb-4">SAMOUCO - O FIM DO MUNDO</h1>
-        <p className="text-base text-muted-foreground leading-relaxed mb-12 max-w-2xl">
+        <h1 className="text-3xl font-normal text-foreground mb-4 text-left">SAMOUCO - O FIM DO MUNDO</h1>
+        <p className="text-base text-muted-foreground leading-relaxed mb-12 text-left">
           {/* Descrição do projeto — a preencher */}
         </p>
 
         <section className="mb-16">
-          <h2 className="text-xl font-normal text-foreground mb-4">Trabalho</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl">
+          <h2 className="text-xl font-normal text-foreground mb-4 text-left">Trabalho</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left">
             Uma série fotográfica que documenta o Samouco, explorando a sua paisagem, os seus habitantes e a relação com o estuário do Tejo — um lugar onde o tempo parece suspender-se no fim do mundo.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -36,14 +37,18 @@ const Samouco = () => {
         </section>
 
         <section>
-          <h2 className="text-xl font-normal text-foreground mb-4">Exposição</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl">
+          <h2 className="text-xl font-normal text-foreground mb-4 text-left">Exposição</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-left">
             A exposição "Samouco — O Fim do Mundo" decorreu de 23 de fevereiro a 21 de março de 2026 no Mercado do Peixe, nas Caldas da Rainha. O espaço industrial do mercado acolheu as fotografias, criando um diálogo singular entre as imagens do Samouco e a arquitetura crua do local.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {expoImages.map((img, i) => (
               <div key={i} className="aspect-[4/3] overflow-hidden">
-                <img src={img} alt={`Exposição Samouco ${i + 1}`} className="w-full h-full object-cover" />
+                <LightboxImage
+                  src={img}
+                  alt={`Exposição Samouco ${i + 1}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
             ))}
           </div>
