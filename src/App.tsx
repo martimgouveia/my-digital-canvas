@@ -13,6 +13,7 @@ import Antiglifo0003 from "./pages/Antiglifo0003";
 import Ilha from "./pages/Ilha";
 import Atemporal from "./pages/Atemporal";
 import Samouco from "./pages/Samouco";
+import OutrosProjetos from "./pages/OutrosProjetos";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/antiglifo/0001" element={<Antiglifo0001 />} />
           <Route path="/antiglifo/0002" element={<Antiglifo0002 />} />
           <Route path="/antiglifo/0003" element={<Antiglifo0003 />} />
+          <Route path="/outros-projetos" element={<OutrosProjetos />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
