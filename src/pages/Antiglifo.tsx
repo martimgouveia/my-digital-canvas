@@ -15,13 +15,13 @@ const Antiglifo = () => {
     <>
       <Header />
       <div className="pt-24 px-5 pb-16 max-w-[1000px] mx-auto">
-        <h1 className="text-4xl font-normal text-foreground mb-5 text-left">
+        <h1 className="text-4xl font-normal text-foreground mb-5">
           antiglifo
         </h1>
-        <h2 className="text-2xl italic text-foreground/80 mb-5 text-left">
+        <h2 className="text-2xl italic text-foreground/80 mb-5">
           Analógico. Em fotografia e texto.
         </h2>
-        <p className="text-base text-foreground leading-relaxed mb-10 text-left">
+        <p className="text-base text-foreground leading-relaxed mb-10">
           Publicado pela primeira vez em outubro de 2025, antiglifo é um projeto que combina fotografia analógica com texto como forma de observar o tempo, a memória e a experiência humana sem a necessidade de os fixar num significado único. Partindo de imagens captadas em momentos quotidianos, o projeto constrói-se através de textos que não explicam as fotografias, mas coexistem com elas. Entre ambos, cria-se um espaço de tensão: entre o que é visto e o que é sentido, entre o que aconteceu e aquilo que é reconstruído. O antiglifo surge como um gesto contrário à inscrição definitiva: não procura marcar um significado, mas questionar a sua estabilidade. Cada publicação funciona como um fragmento autónomo, que simultaneamente se relaciona com os outros, formando uma espécie de arquivo emocional onde o tempo não é linear, mas vivido, revisto e reinterpretado. Mais do que documentar, o projeto propõe uma experiência: a de parar, observar e habitar o instante, mesmo quando este escapa. Daí estar publicado, atualmente e somente, numa página no Instagram, opondo-se a esta plataforma que serve-nos com uma grande variedade de conteúdos e de consumo rápido.
         </p>
 
