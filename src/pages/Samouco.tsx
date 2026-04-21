@@ -18,28 +18,27 @@ const Samouco = () => {
       <div className="pt-24 px-5 pb-16 max-w-[1000px] mx-auto">
         <h1 className="text-3xl font-normal text-foreground mb-4">SAMOUCO - O FIM DO MUNDO</h1>
         <p className="text-base text-muted-foreground leading-relaxed mb-12">
-          {/* Descrição do projeto — a preencher */}
+          Do outro lado da capital, cerne do nosso país, debaixo de uma infraestrutura que ditou uma nova era da nossa História, repete-se todos os dias a apanha ilegal da amêijoa-japónica no rio Tejo. Estas imagens resultam de um processo iniciado em 2024, durante a realização de um documentário etnográfico em parceria com Tiago Santos. Através da fotografia, revelam-se relações, tensões e constelações visuais que expõem camadas de trabalho, risco, migração e sobrevivência. Estes marisqueiros, maioritariamente emigrantes, vivem e trabalham em condições precárias, expostos à toxicidade do produto que recolhem e à instabilidade de um quotidiano marcado pela sobrevivência. O rio surge não apenas como cenário, mas como agente ativo, moldando corpos, ritmos e modos de vida. O Tejo aparece aqui como um território ferido e persistente, que absorve, devolve e transforma tudo o que nele habita.
         </p>
 
         <section className="mb-16">
-          <h2 className="text-xl font-normal text-foreground mb-4">Trabalho</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-            Uma série fotográfica que documenta o Samouco, explorando a sua paisagem, os seus habitantes e a relação com o estuário do Tejo — um lugar onde o tempo parece suspender-se no fim do mundo.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="aspect-[4/3] bg-secondary flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">foto 1</span>
+          <h2 className="text-xl font-normal text-foreground mb-4">Ficha técnica</h2>
+          <dl className="text-sm leading-relaxed text-muted-foreground space-y-1.5 mb-8">
+            <div>
+              <dt className="inline font-medium text-foreground">Fotografia e Texto: </dt>
+              <dd className="inline">Martim Gouveia</dd>
             </div>
-            <div className="aspect-[4/3] bg-secondary flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">foto 2</span>
+            <div>
+              <dt className="inline font-medium text-foreground">Montagem da exposição: </dt>
+              <dd className="inline">Manuel Grácio e Martim Gouveia</dd>
             </div>
-          </div>
+          </dl>
         </section>
 
         <section>
           <h2 className="text-xl font-normal text-foreground mb-4">Exposição</h2>
           <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-            A exposição "Samouco — O Fim do Mundo" decorreu de 23 de fevereiro a 21 de março de 2026 no Mercado do Peixe, nas Caldas da Rainha. O espaço industrial do mercado acolheu as fotografias, criando um diálogo singular entre as imagens do Samouco e a arquitetura crua do local.
+            A exposição "Samouco — O Fim do Mundo" decorreu de 23 de fevereiro a 21 de março de 2026 no Mercado do Peixe, nas Caldas da Rainha. Esta exposição organizou-se pela montagem e pelo diálogo entre imagens. Não apresentou uma narrativa linear, dividindo-se em três núcleos que percorreram o objeto central do trabalho, o espaço onde ele acontece e, por fim, o universo íntimo de quem o realiza. O espaço público em si destinado ao comércio piscatório é um facto importante e envolvente no conceito deste projeto.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {expoImages.map((img, i) => (

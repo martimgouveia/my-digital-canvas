@@ -7,10 +7,10 @@ import ilha from "@/assets/filme/ilhacover.png";
 import kael from "@/assets/filme/kael.png";
 
 const projects = [
-  { to: "#", title: "Flores", year: "2026", image: flores },
-  { to: "#", title: "KAEL (unreleased)", year: "2026", image: kael },
-  { to: "#", title: "mind the gap", year: "2025", image: mindthegap },
-  { to: "#", title: "Até a Maré Subir (unreleased)", year: "2025", image: ateamaresubir },
+  { to: "/filme/flores", title: "Flores", year: "2026", image: flores },
+  { to: "/filme/kael", title: "KAEL (unreleased)", year: "2026", image: kael },
+  { to: "/filme/mind-the-gap", title: "mind the gap", year: "2025", image: mindthegap },
+  { to: "/filme/ate-a-mare-subir", title: "Até a Maré Subir (unreleased)", year: "2025", image: ateamaresubir },
   { to: "/filme/ilha", title: "ilha", year: "2024", image: ilha },
 ];
 
