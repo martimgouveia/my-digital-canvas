@@ -24,7 +24,7 @@ const Index = () => {
           </a>
         </div>
 
-        <div className="flex justify-center gap-12">
+        <div className="flex flex-wrap justify-center gap-x-12 gap-y-4">
           <Link to="/filme" className="text-xl text-foreground hover:text-muted-foreground transition-colors">
             FILME
           </Link>
@@ -33,6 +33,9 @@ const Index = () => {
           </Link>
           <Link to="/antiglifo" className="text-xl text-foreground hover:text-muted-foreground transition-colors">
             ANTIGLIFO
+          </Link>
+          <Link to="/outros-projetos" className="text-xl text-foreground hover:text-muted-foreground transition-colors">
+            OUTROS PROJETOS
           </Link>
         </div>
       </div>
