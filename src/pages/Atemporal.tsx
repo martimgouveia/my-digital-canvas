@@ -101,6 +101,7 @@ const Atemporal = () => {
           <p className="text-sm text-muted-foreground leading-relaxed mb-6">
             A 16 de junho de 2025, este projeto foi avaliado e apresentado numa das salas escuras denominadas Blackbox na ESAD.CR. Os meus colegas e outros visitantes puderam ver em prática o efeito refletido pela luz ultravioleta nas fotografias e a aplicação da tinta ultravioleta nas próprias fotografias.
           </p>
+          <BlackboxCarousel />
         </section>
       </div>
     </>
