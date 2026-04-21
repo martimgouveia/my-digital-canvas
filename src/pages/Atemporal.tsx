@@ -64,6 +64,28 @@ const Atemporal = () => {
         </div>
 
         <section className="mt-16">
+          <h2 className="text-xl font-normal text-foreground mb-4">Ficha técnica</h2>
+          <dl className="text-sm leading-relaxed text-muted-foreground space-y-1.5">
+            <div>
+              <dt className="inline font-medium text-foreground">Autoria (fotografia e texto): </dt>
+              <dd className="inline">Martim Gouveia</dd>
+            </div>
+            <div>
+              <dt className="inline font-medium text-foreground">Caligrafia: </dt>
+              <dd className="inline">Luís Freitas</dd>
+            </div>
+            <div>
+              <dt className="inline font-medium text-foreground">Música: </dt>
+              <dd className="inline">"Atemporal" de Martim Gouveia (a partir de um sample de "De Volta ao Espelho" de Rádio Macau)</dd>
+            </div>
+            <div>
+              <dt className="inline font-medium text-foreground">Apoio logístico: </dt>
+              <dd className="inline">Leonor Serra e Rita Dias</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section className="mt-16">
           <h2 className="text-xl font-normal text-foreground mb-4">Exposição na Blackbox da ESAD.CR — 16 de junho de 2025</h2>
           <p className="text-sm text-muted-foreground leading-relaxed mb-6">
             A 16 de junho de 2025, este projeto foi avaliado e apresentado numa das salas escuras denominadas Blackbox na ESAD.CR. Os meus colegas e outros visitantes puderam ver em prática o efeito refletido pela luz ultravioleta nas fotografias e a aplicação da tinta ultravioleta nas próprias fotografias.

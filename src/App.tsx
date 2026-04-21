@@ -5,6 +5,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
 import Filme from "./pages/Filme";
+import Flores from "./pages/Flores";
+import Kael from "./pages/Kael";
+import MindTheGap from "./pages/MindTheGap";
+import AteAMareSubir from "./pages/AteAMareSubir";
 import Fotografia from "./pages/Fotografia";
 import Antiglifo from "./pages/Antiglifo";
 import Antiglifo0001 from "./pages/Antiglifo0001";
@@ -28,6 +32,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/filme" element={<Filme />} />
           <Route path="/filme/ilha" element={<Ilha />} />
+          <Route path="/filme/flores" element={<Flores />} />
+          <Route path="/filme/kael" element={<Kael />} />
+          <Route path="/filme/mind-the-gap" element={<MindTheGap />} />
+          <Route path="/filme/ate-a-mare-subir" element={<AteAMareSubir />} />
           <Route path="/fotografia" element={<Fotografia />} />
           <Route path="/fotografia/atemporal" element={<Atemporal />} />
           <Route path="/fotografia/samouco" element={<Samouco />} />
