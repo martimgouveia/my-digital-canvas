@@ -31,6 +31,36 @@ const slides = [
   { image: atemporal11, caption: "Entretanto, a culpa casou-se." },
 ];
 
+const blackboxImages = [blackbox1, blackbox2, blackbox3];
+
+const BlackboxCarousel = () => {
+  const [idx, setIdx] = useState(0);
+  const prev = () => setIdx((i) => (i === 0 ? blackboxImages.length - 1 : i - 1));
+  const next = () => setIdx((i) => (i === blackboxImages.length - 1 ? 0 : i + 1));
+  return (
+    <LightboxGallery>
+      <div className="relative">
+        <LightboxImage
+          src={blackboxImages[idx]}
+          alt={`Blackbox ESAD.CR ${idx + 1}`}
+          className="w-full h-auto"
+        />
+        <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 text-foreground hover:text-muted-foreground transition-colors duration-300">
+          <ChevronLeft size={32} />
+        </button>
+        <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 text-foreground hover:text-muted-foreground transition-colors duration-300">
+          <ChevronRight size={32} />
+        </button>
+      </div>
+      <div className="hidden">
+        {blackboxImages.map((src, i) => (
+          <LightboxImage key={i} src={src} alt={`Blackbox ESAD.CR ${i + 1}`} />
+        ))}
+      </div>
+    </LightboxGallery>
+  );
+};
+
 const Atemporal = () => {
   const [current, setCurrent] = useState(0);
 
