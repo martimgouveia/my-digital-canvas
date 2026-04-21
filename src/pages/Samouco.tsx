@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import LightboxImage from "@/components/LightboxImage";
+import LightboxImage, { LightboxGallery } from "@/components/LightboxImage";
 import expo1 from "@/assets/samouco/expo1.jpg";
 import expo2 from "@/assets/samouco/expo2.jpg";
 import expo3 from "@/assets/samouco/expo3.jpg";
@@ -40,17 +40,19 @@ const Samouco = () => {
           <p className="text-sm text-muted-foreground leading-relaxed mb-6">
             A exposição "Samouco — O Fim do Mundo" decorreu de 23 de fevereiro a 21 de março de 2026 no Mercado do Peixe, nas Caldas da Rainha. Esta exposição organizou-se pela montagem e pelo diálogo entre imagens. Não apresentou uma narrativa linear, dividindo-se em três núcleos que percorreram o objeto central do trabalho, o espaço onde ele acontece e, por fim, o universo íntimo de quem o realiza. O espaço público em si destinado ao comércio piscatório é um facto importante e envolvente no conceito deste projeto.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {expoImages.map((img, i) => (
-              <div key={i} className="aspect-[4/3] overflow-hidden">
-                <LightboxImage
-                  src={img}
-                  alt={`Exposição Samouco ${i + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
+          <LightboxGallery>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {expoImages.map((img, i) => (
+                <div key={i} className="aspect-[4/3] overflow-hidden">
+                  <LightboxImage
+                    src={img}
+                    alt={`Exposição Samouco ${i + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </LightboxGallery>
         </section>
       </div>
     </>
