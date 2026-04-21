@@ -5,18 +5,40 @@ interface Item {
   title: string;
   year: string;
   role: string;
-  to: string;
+  to?: string;
+  href?: string;
+  authors?: string;
+  unreleased?: boolean;
 }
 
 const items: Item[] = [
+  {
+    title: "SEM PRESSÃO",
+    year: "2026",
+    role: "Ator e Produção",
+    authors: "de Manuel Grácio",
+    unreleased: true,
+  },
+  {
+    title: "PARCEIROS INCOMPATÍVEIS",
+    year: "2026",
+    role: "Produção",
+    authors: "de Francisco Amaral",
+    unreleased: true,
+  },
+  {
+    title: "CALDAS MIDNIGHT",
+    year: "2025",
+    role: "Ator e Operador de Som",
+    authors: "de Francisco Amaral e Manuel Grácio",
+    href: "https://youtu.be/6Tp0wOSkmx8",
+  },
   {
     title: "CONNECT FEST",
     year: "2024",
     role: "Fotografia de evento",
     to: "/outros-projetos/connect-fest",
   },
-  // Vai acrescentando aqui à medida que quiseres adicionar mais projetos
-  // Exemplos de funções: Ator, Produtor, Assistente de realização, etc.
 ];
 
 const OutrosProjetos = () => {
@@ -33,25 +55,46 @@ const OutrosProjetos = () => {
         </p>
 
         <ul className="divide-y divide-border">
-          {items.map((item) => (
-            <li
-              key={item.title}
-              className="grid grid-cols-12 gap-4 py-5 items-baseline"
-            >
-              <span className="col-span-2 text-sm text-muted-foreground tabular-nums">
-                {item.year}
-              </span>
-              <Link
-                to={item.to}
-                className="col-span-7 text-base text-foreground hover:opacity-60 transition-opacity"
-              >
+          {items.map((item) => {
+            const titleNode = (
+              <span className="text-base text-foreground hover:opacity-60 transition-opacity">
                 {item.title}
-              </Link>
-              <span className="col-span-3 text-sm text-muted-foreground italic">
-                {item.role}
+                {item.unreleased && (
+                  <span className="ml-2 text-xs text-muted-foreground italic">(unreleased)</span>
+                )}
               </span>
-            </li>
-          ))}
+            );
+
+            const titleEl = item.to ? (
+              <Link to={item.to}>{titleNode}</Link>
+            ) : item.href ? (
+              <a href={item.href} target="_blank" rel="noopener noreferrer">
+                {titleNode}
+              </a>
+            ) : (
+              titleNode
+            );
+
+            return (
+              <li
+                key={item.title}
+                className="grid grid-cols-12 gap-4 py-5 items-baseline"
+              >
+                <span className="col-span-2 text-sm text-muted-foreground tabular-nums">
+                  {item.year}
+                </span>
+                <div className="col-span-7">
+                  {titleEl}
+                  {item.authors && (
+                    <p className="text-xs text-muted-foreground mt-1">{item.authors}</p>
+                  )}
+                </div>
+                <span className="col-span-3 text-sm text-muted-foreground italic">
+                  {item.role}
+                </span>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>
