@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
-import LightboxImage from "@/components/LightboxImage";
+import LightboxImage, { LightboxGallery } from "@/components/LightboxImage";
+import blackbox1 from "@/assets/atemporal/blackbox1.jpg";
+import blackbox2 from "@/assets/atemporal/blackbox2.jpg";
+import blackbox3 from "@/assets/atemporal/blackbox3.jpg";
 import atemporal1 from "@/assets/fotografia/atemporal1.jpg";
 import atemporal2 from "@/assets/fotografia/atemporal2.jpg";
 import atemporal3 from "@/assets/atemporal/atemporal3.jpg";
@@ -45,23 +48,31 @@ const Atemporal = () => {
           "Atemporal" é uma instalação fotográfica que pretende gerar uma interação única entre os visitantes que imergem neste espaço escuro e os objetos estáticos que o habitam, mas que não ficam suspensos pelo peso do tempo, desafiando a sua perceção. Este conjunto de 11 fotografias revela mais do que aquilo que está visível à primeira vista. As frases manuscritas acrescentam múltiplas camadas de interpretação e podem gerar mais dúvidas, uma vez que só se tornam visíveis sob esta singular luz. Esta luz simboliza o que frequentemente procuramos, mas raramente descobrimos, e quando finalmente, ou por acaso, a encontramos, a sua aceitação pode ser um desafio. Paradoxalmente, a impossibilidade de a encontrar pode tornar-se o nosso maior desejo.
         </p>
 
-        <div className="relative">
-          <LightboxImage
-            src={slide.image}
-            alt={`atemporal ${current + 1}`}
-            className="w-full h-auto"
-            caption={slide.caption}
-          />
-          <p className="text-sm text-muted-foreground mt-4 italic">
-            {slide.caption}
-          </p>
-          <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 text-foreground hover:text-muted-foreground transition-colors duration-300">
-            <ChevronLeft size={32} />
-          </button>
-          <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 text-foreground hover:text-muted-foreground transition-colors duration-300">
-            <ChevronRight size={32} />
-          </button>
-        </div>
+        <LightboxGallery>
+          <div className="relative">
+            <LightboxImage
+              src={slide.image}
+              alt={`atemporal ${current + 1}`}
+              className="w-full h-auto"
+              caption={slide.caption}
+            />
+            <p className="text-sm text-muted-foreground mt-4 italic">
+              {slide.caption}
+            </p>
+            <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 text-foreground hover:text-muted-foreground transition-colors duration-300">
+              <ChevronLeft size={32} />
+            </button>
+            <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 text-foreground hover:text-muted-foreground transition-colors duration-300">
+              <ChevronRight size={32} />
+            </button>
+          </div>
+          {/* Hidden registrations so all 11 slides are part of the fullscreen gallery */}
+          <div className="hidden">
+            {slides.map((s, i) => (
+              <LightboxImage key={i} src={s.image} alt={`atemporal ${i + 1}`} caption={s.caption} />
+            ))}
+          </div>
+        </LightboxGallery>
 
         <section className="mt-16">
           <h2 className="text-xl font-normal text-foreground mb-4">Ficha técnica</h2>
