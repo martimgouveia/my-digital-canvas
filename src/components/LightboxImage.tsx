@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, useContext, ReactNode } from "react";
+import { useState, useEffect, createContext, useContext, useRef, ReactNode, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface GalleryItem {
@@ -8,9 +8,9 @@ interface GalleryItem {
 }
 
 interface GalleryContextValue {
-  items: GalleryItem[];
-  register: (item: GalleryItem) => number;
-  open: (index: number) => void;
+  register: (item: GalleryItem) => void;
+  unregister: (src: string) => void;
+  open: (src: string) => void;
 }
 
 const GalleryContext = createContext<GalleryContextValue | null>(null);
@@ -20,36 +20,62 @@ interface LightboxGalleryProps {
 }
 
 export const LightboxGallery = ({ children }: LightboxGalleryProps) => {
-  const [items, setItems] = useState<GalleryItem[]>([]);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  // Ref holds the source-of-truth list (sync, ordered by registration)
+  const itemsRef = useRef<GalleryItem[]>([]);
+  const [, forceRender] = useState(0);
+  const [openSrc, setOpenSrc] = useState<string | null>(null);
   const [visible, setVisible] = useState(false);
 
-  const register = (item: GalleryItem) => {
-    let index = -1;
-    setItems((prev) => {
-      const existing = prev.findIndex((p) => p.src === item.src);
-      if (existing !== -1) {
-        index = existing;
-        return prev;
-      }
-      index = prev.length;
-      return [...prev, item];
-    });
-    return index;
-  };
+  const register = useCallback((item: GalleryItem) => {
+    const list = itemsRef.current;
+    const existing = list.findIndex((p) => p.src === item.src);
+    if (existing === -1) {
+      list.push(item);
+      forceRender((n) => n + 1);
+    } else {
+      // Update metadata (alt/caption) if changed
+      list[existing] = item;
+    }
+  }, []);
 
-  const open = (index: number) => setOpenIndex(index);
-  const close = () => {
+  const unregister = useCallback((src: string) => {
+    const list = itemsRef.current;
+    const idx = list.findIndex((p) => p.src === src);
+    if (idx !== -1) {
+      list.splice(idx, 1);
+      forceRender((n) => n + 1);
+    }
+  }, []);
+
+  const open = useCallback((src: string) => setOpenSrc(src), []);
+
+  const close = useCallback(() => {
     setVisible(false);
-    setTimeout(() => setOpenIndex(null), 300);
-  };
-  const prev = () =>
-    setOpenIndex((i) => (i === null ? null : i === 0 ? items.length - 1 : i - 1));
-  const next = () =>
-    setOpenIndex((i) => (i === null ? null : i === items.length - 1 ? 0 : i + 1));
+    setTimeout(() => setOpenSrc(null), 300);
+  }, []);
+
+  const prev = useCallback(() => {
+    setOpenSrc((cur) => {
+      if (cur === null) return cur;
+      const list = itemsRef.current;
+      const i = list.findIndex((p) => p.src === cur);
+      if (i === -1) return cur;
+      return list[(i - 1 + list.length) % list.length].src;
+    });
+  }, []);
+
+  const next = useCallback(() => {
+    setOpenSrc((cur) => {
+      if (cur === null) return cur;
+      const list = itemsRef.current;
+      const i = list.findIndex((p) => p.src === cur);
+      if (i === -1) return cur;
+      return list[(i + 1) % list.length].src;
+    });
+  }, []);
 
   useEffect(() => {
-    if (openIndex !== null) {
+    if (openSrc !== null) {
       const t = requestAnimationFrame(() => setVisible(true));
       const onKey = (e: KeyboardEvent) => {
         if (e.key === "Escape") close();
@@ -64,12 +90,13 @@ export const LightboxGallery = ({ children }: LightboxGalleryProps) => {
         document.body.style.overflow = "";
       };
     }
-  }, [openIndex, items.length]);
+  }, [openSrc, close, prev, next]);
 
-  const current = openIndex !== null ? items[openIndex] : null;
+  const items = itemsRef.current;
+  const current = openSrc !== null ? items.find((p) => p.src === openSrc) ?? null : null;
 
   return (
-    <GalleryContext.Provider value={{ items, register, open }}>
+    <GalleryContext.Provider value={{ register, unregister, open }}>
       {children}
       {current && (
         <div
@@ -137,13 +164,12 @@ const LightboxImage = ({ src, alt, className = "", caption }: LightboxImageProps
   const ctx = useContext(GalleryContext);
   const [standaloneOpen, setStandaloneOpen] = useState(false);
   const [visible, setVisible] = useState(false);
-  const [myIndex, setMyIndex] = useState<number | null>(null);
 
   // Register with parent gallery (if any)
   useEffect(() => {
     if (ctx) {
-      const idx = ctx.register({ src, alt, caption });
-      setMyIndex(idx);
+      ctx.register({ src, alt, caption });
+      return () => ctx.unregister(src);
     }
   }, [ctx, src, alt, caption]);
 
@@ -169,8 +195,8 @@ const LightboxImage = ({ src, alt, className = "", caption }: LightboxImageProps
   };
 
   const handleClick = () => {
-    if (ctx && myIndex !== null) {
-      ctx.open(myIndex);
+    if (ctx) {
+      ctx.open(src);
     } else {
       setStandaloneOpen(true);
     }
