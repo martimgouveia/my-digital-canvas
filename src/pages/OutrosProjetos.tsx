@@ -34,6 +34,18 @@ const items: Item[] = [
     href: "https://youtu.be/6Tp0wOSkmx8",
   },
   {
+    title: "WARM UP #02 CONNECT FEST",
+    year: "2026",
+    role: "Gravação e edição de vídeo promocional",
+    href: "https://www.instagram.com/reel/DUjL9sRiCjP/",
+  },
+  {
+    title: "WARM UP #01 CONNECT FEST",
+    year: "2025",
+    role: "Gravação de vídeo promocional",
+    href: "https://www.instagram.com/reel/DSKyqB-CMT8/",
+  },
+  {
     title: "CONNECT FEST",
     year: "2024",
     role: "Fotografia de evento",
