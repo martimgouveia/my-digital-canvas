@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const MindTheGap = () => {
+  const { t } = useLanguage();
   return (
     <>
       <Header />
@@ -10,11 +12,11 @@ const MindTheGap = () => {
           <div className="md:w-2/5">
             <dl className="text-sm leading-relaxed text-muted-foreground space-y-1.5">
               <div>
-                <dt className="inline font-medium text-foreground">Autoria: </dt>
+                <dt className="inline font-medium text-foreground">{t("Autoria", "Author")}: </dt>
                 <dd className="inline">Martim Gouveia</dd>
               </div>
               <div>
-                <dt className="inline font-medium text-foreground">Música: </dt>
+                <dt className="inline font-medium text-foreground">{t("Música", "Music")}: </dt>
                 <dd className="inline">My Bloody Valentine — "you made me realise"</dd>
               </div>
             </dl>

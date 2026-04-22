@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
 import LightboxImage, { LightboxGallery } from "@/components/LightboxImage";
+import { useLanguage } from "@/contexts/LanguageContext";
 import blackbox1 from "@/assets/atemporal/blackbox1.jpg";
 import blackbox2 from "@/assets/atemporal/blackbox2.jpg";
 import blackbox3 from "@/assets/atemporal/blackbox3.jpg";
@@ -62,6 +63,7 @@ const BlackboxCarousel = () => {
 };
 
 const Atemporal = () => {
+  const { t, lang } = useLanguage();
   const [current, setCurrent] = useState(0);
 
   const prev = () => setCurrent((c) => (c === 0 ? slides.length - 1 : c - 1));
@@ -74,9 +76,18 @@ const Atemporal = () => {
       <Header />
       <div className="pt-24 px-8 pb-16 max-w-4xl mx-auto">
         <h1 className="text-3xl font-light text-foreground mb-4">Atemporal</h1>
-        <p className="text-sm leading-relaxed text-muted-foreground mb-12">
-          "Atemporal" é uma instalação fotográfica que pretende gerar uma interação única entre os visitantes que imergem neste espaço escuro e os objetos estáticos que o habitam, mas que não ficam suspensos pelo peso do tempo, desafiando a sua perceção. Este conjunto de 11 fotografias revela mais do que aquilo que está visível à primeira vista. As frases manuscritas acrescentam múltiplas camadas de interpretação e podem gerar mais dúvidas, uma vez que só se tornam visíveis sob esta singular luz. Esta luz simboliza o que frequentemente procuramos, mas raramente descobrimos, e quando finalmente, ou por acaso, a encontramos, a sua aceitação pode ser um desafio. Paradoxalmente, a impossibilidade de a encontrar pode tornar-se o nosso maior desejo.
+        <p className="text-sm leading-relaxed text-muted-foreground mb-4">
+          {t(
+            "\"Atemporal\" é uma instalação fotográfica que pretende gerar uma interação única entre os visitantes que imergem neste espaço escuro e os objetos estáticos que o habitam, mas que não ficam suspensos pelo peso do tempo, desafiando a sua perceção. Este conjunto de 11 fotografias revela mais do que aquilo que está visível à primeira vista. As frases manuscritas acrescentam múltiplas camadas de interpretação e podem gerar mais dúvidas, uma vez que só se tornam visíveis sob esta singular luz. Esta luz simboliza o que frequentemente procuramos, mas raramente descobrimos, e quando finalmente, ou por acaso, a encontramos, a sua aceitação pode ser um desafio. Paradoxalmente, a impossibilidade de a encontrar pode tornar-se o nosso maior desejo.",
+            "\"Atemporal\" is a photographic installation that aims to generate a unique interaction between visitors who immerse themselves in this dark space and the static objects that inhabit it — objects that are not suspended by the weight of time, but rather challenge our perception of it. This set of 11 photographs reveals more than what is visible at first glance. The handwritten sentences add multiple layers of interpretation and may raise more questions, since they only become visible under this singular light. This light symbolises what we often seek but rarely find, and when we finally — or by chance — find it, accepting it can be a challenge. Paradoxically, the impossibility of finding it may become our greatest desire."
+          )}
         </p>
+        {lang === "en" && (
+          <p className="text-xs text-muted-foreground/70 italic mb-12">
+            Note: the handwritten captions on each photograph remain in their original Portuguese.
+          </p>
+        )}
+        {lang === "pt" && <div className="mb-8" />}
 
         <LightboxGallery>
           <div className="relative">
@@ -105,31 +116,42 @@ const Atemporal = () => {
         </LightboxGallery>
 
         <section className="mt-16">
-          <h2 className="text-xl font-normal text-foreground mb-4">Ficha técnica</h2>
+          <h2 className="text-xl font-normal text-foreground mb-4">{t("Ficha técnica", "Credits")}</h2>
           <dl className="text-sm leading-relaxed text-muted-foreground space-y-1.5">
             <div>
-              <dt className="inline font-medium text-foreground">Autoria (fotografia e texto): </dt>
+              <dt className="inline font-medium text-foreground">{t("Autoria (fotografia e texto)", "Author (photography and text)")}: </dt>
               <dd className="inline">Martim Gouveia</dd>
             </div>
             <div>
-              <dt className="inline font-medium text-foreground">Caligrafia: </dt>
+              <dt className="inline font-medium text-foreground">{t("Caligrafia", "Calligraphy")}: </dt>
               <dd className="inline">Luís Freitas</dd>
             </div>
             <div>
-              <dt className="inline font-medium text-foreground">Música: </dt>
-              <dd className="inline">"Atemporal" de Martim Gouveia (a partir de um sample de "De Volta ao Espelho" de Rádio Macau)</dd>
+              <dt className="inline font-medium text-foreground">{t("Música", "Music")}: </dt>
+              <dd className="inline">{t(
+                "\"Atemporal\" de Martim Gouveia (a partir de um sample de \"De Volta ao Espelho\" de Rádio Macau)",
+                "\"Atemporal\" by Martim Gouveia (based on a sample of \"De Volta ao Espelho\" by Rádio Macau)"
+              )}</dd>
             </div>
             <div>
-              <dt className="inline font-medium text-foreground">Apoio logístico: </dt>
-              <dd className="inline">Leonor Serra e Rita Dias</dd>
+              <dt className="inline font-medium text-foreground">{t("Apoio logístico", "Logistical support")}: </dt>
+              <dd className="inline">Leonor Serra {t("e", "and")} Rita Dias</dd>
             </div>
           </dl>
         </section>
 
         <section className="mt-16">
-          <h2 className="text-xl font-normal text-foreground mb-4">Exposição na Blackbox da ESAD.CR — 16 de junho de 2025</h2>
+          <h2 className="text-xl font-normal text-foreground mb-4">
+            {t(
+              "Exposição na Blackbox da ESAD.CR — 16 de junho de 2025",
+              "Exhibition at the ESAD.CR Blackbox — 16 June 2025"
+            )}
+          </h2>
           <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-            A 16 de junho de 2025, este projeto foi avaliado e apresentado numa das salas escuras denominadas Blackbox na ESAD.CR. Os meus colegas e outros visitantes puderam ver em prática o efeito refletido pela luz ultravioleta nas fotografias e a aplicação da tinta ultravioleta nas próprias fotografias.
+            {t(
+              "A 16 de junho de 2025, este projeto foi avaliado e apresentado numa das salas escuras denominadas Blackbox na ESAD.CR. Os meus colegas e outros visitantes puderam ver em prática o efeito refletido pela luz ultravioleta nas fotografias e a aplicação da tinta ultravioleta nas próprias fotografias.",
+              "On 16 June 2025, this project was assessed and presented in one of the dark rooms known as Blackbox at ESAD.CR. My colleagues and other visitors were able to experience the effect reflected by the ultraviolet light on the photographs and the application of ultraviolet ink on the photographs themselves."
+            )}
           </p>
           <BlackboxCarousel />
         </section>
