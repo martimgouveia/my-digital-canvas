@@ -33,17 +33,17 @@ const items: Item[] = [
     unreleased: true,
   },
   {
+    title: "WARM UP #01 CONNECT FEST",
+    year: "2025",
+    role: "Gravação de vídeo promocional",
+    href: "https://www.instagram.com/reel/DSKyqB-CMT8/",
+  },
+  {
     title: "CALDAS MIDNIGHT",
     year: "2025",
     role: "Ator e Operador de Som",
     authors: "de Francisco Amaral e Manuel Grácio",
     href: "https://youtu.be/6Tp0wOSkmx8",
-  },
-  {
-    title: "WARM UP #01 CONNECT FEST",
-    year: "2025",
-    role: "Gravação de vídeo promocional",
-    href: "https://www.instagram.com/reel/DSKyqB-CMT8/",
   },
   {
     title: "CONNECT FEST",
