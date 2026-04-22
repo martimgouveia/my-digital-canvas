@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ProjectCardProps {
   to: string;
@@ -8,8 +9,9 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ to, title, year, image }: ProjectCardProps) => {
+  const { localizePath } = useLanguage();
   return (
-    <Link to={to} className="group relative block aspect-[4/3] overflow-hidden bg-secondary">
+    <Link to={localizePath(to)} className="group relative block aspect-[4/3] overflow-hidden bg-secondary">
       {image ? (
         <img src={image} alt={title} className="w-full h-full object-cover" />
       ) : (
