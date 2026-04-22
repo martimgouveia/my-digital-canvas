@@ -13,6 +13,12 @@ interface Item {
 
 const items: Item[] = [
   {
+    title: "WARM UP #02 CONNECT FEST",
+    year: "2026",
+    role: "Gravação e edição de vídeo promocional",
+    href: "https://www.instagram.com/reel/DUjL9sRiCjP/",
+  },
+  {
     title: "SEM PRESSÃO",
     year: "2026",
     role: "Ator e Produção",
@@ -32,12 +38,6 @@ const items: Item[] = [
     role: "Ator e Operador de Som",
     authors: "de Francisco Amaral e Manuel Grácio",
     href: "https://youtu.be/6Tp0wOSkmx8",
-  },
-  {
-    title: "WARM UP #02 CONNECT FEST",
-    year: "2026",
-    role: "Gravação e edição de vídeo promocional",
-    href: "https://www.instagram.com/reel/DUjL9sRiCjP/",
   },
   {
     title: "WARM UP #01 CONNECT FEST",
