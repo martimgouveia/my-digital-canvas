@@ -8,8 +8,13 @@ import expo5 from "@/assets/samouco/expo5.jpg";
 import expo6 from "@/assets/samouco/expo6.jpg";
 import expo7 from "@/assets/samouco/expo7.jpg";
 import expo8 from "@/assets/samouco/expo8.jpg";
+import extra1 from "@/assets/samouco/extra1.jpg";
+import extra2 from "@/assets/samouco/extra2.jpg";
+import extra3 from "@/assets/samouco/extra3.jpg";
+import extra4 from "@/assets/samouco/extra4.jpg";
+import extra5 from "@/assets/samouco/extra5.jpg";
 
-const expoImages = [expo1, expo2, expo3, expo4, expo5, expo6, expo7, expo8];
+const expoImages = [expo1, expo2, expo3, expo4, expo5, expo6, expo7, expo8, extra1, extra2, extra3, extra4, extra5];
 
 const Samouco = () => {
   return (
@@ -53,6 +58,23 @@ const Samouco = () => {
               ))}
             </div>
           </LightboxGallery>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="text-xl font-normal text-foreground mb-4">Imprensa</h2>
+          <ul className="text-sm text-muted-foreground leading-relaxed space-y-2">
+            <li>
+              <a
+                href="https://jornaldascaldas.pt/2026/03/01/martim-gouveia-expoe-no-mercado-do-peixe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:opacity-60 transition-opacity underline underline-offset-4"
+              >
+                Jornal das Caldas — "Martim Gouveia expõe no Mercado do Peixe" (01/03/2026)
+              </a>
+            </li>
+            <li className="italic">Foto da Gazeta das Caldas — em breve</li>
+          </ul>
         </section>
       </div>
     </>
