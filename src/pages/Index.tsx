@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
 import { Instagram, Youtube, Mail } from "lucide-react";
 import background from "@/assets/background.jpeg";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const Index = () => {
+  const { t, localizePath } = useLanguage();
   return (
     <div className="min-h-screen flex items-center justify-center bg-background relative" style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center 75%' }}>
       <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.4)' }} />
+
+      <div className="absolute top-6 right-10 z-20">
+        <LanguageToggle />
+      </div>
 
       <div className="relative z-10 text-center">
         <h1 className="text-6xl font-normal text-foreground mb-5">
@@ -25,17 +32,17 @@ const Index = () => {
         </div>
 
         <div className="flex flex-wrap justify-center gap-x-12 gap-y-4">
-          <Link to="/filme" className="text-xl text-foreground hover:text-muted-foreground transition-colors">
-            FILME
+          <Link to={localizePath("/filme")} className="text-xl text-foreground hover:text-muted-foreground transition-colors">
+            {t("FILME", "FILM")}
           </Link>
-          <Link to="/fotografia" className="text-xl text-foreground hover:text-muted-foreground transition-colors">
-            FOTOGRAFIA
+          <Link to={localizePath("/fotografia")} className="text-xl text-foreground hover:text-muted-foreground transition-colors">
+            {t("FOTOGRAFIA", "PHOTOGRAPHY")}
           </Link>
-          <Link to="/antiglifo" className="text-xl text-foreground hover:text-muted-foreground transition-colors">
+          <Link to={localizePath("/antiglifo")} className="text-xl text-foreground hover:text-muted-foreground transition-colors">
             ANTIGLIFO
           </Link>
-          <Link to="/outros-projetos" className="text-xl text-foreground hover:text-muted-foreground transition-colors">
-            OUTROS PROJETOS
+          <Link to={localizePath("/outros-projetos")} className="text-xl text-foreground hover:text-muted-foreground transition-colors">
+            {t("OUTROS PROJETOS", "OTHER PROJECTS")}
           </Link>
         </div>
       </div>

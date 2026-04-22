@@ -1,13 +1,16 @@
 import Header from "@/components/Header";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Item {
   title: string;
   year: string;
-  role: string;
+  rolePt: string;
+  roleEn: string;
   to?: string;
   href?: string;
-  authors?: string;
+  authorsPt?: string;
+  authorsEn?: string;
   unreleased?: boolean;
 }
 
@@ -15,59 +18,73 @@ const items: Item[] = [
   {
     title: "WARM UP #02 CONNECT FEST",
     year: "2026",
-    role: "Gravação e edição de vídeo promocional",
+    rolePt: "Gravação e edição de vídeo promocional",
+    roleEn: "Filming and editing of promotional video",
     href: "https://www.instagram.com/reel/DUjL9sRiCjP/",
   },
   {
     title: "SEM PRESSÃO",
     year: "2026",
-    role: "Ator e Produção",
-    authors: "de Manuel Grácio",
+    rolePt: "Ator e Produção",
+    roleEn: "Actor and Production",
+    authorsPt: "de Manuel Grácio",
+    authorsEn: "by Manuel Grácio",
     unreleased: true,
   },
   {
     title: "PARCEIROS INCOMPATÍVEIS",
     year: "2026",
-    role: "Produção",
-    authors: "de Francisco Amaral",
+    rolePt: "Produção",
+    roleEn: "Production",
+    authorsPt: "de Francisco Amaral",
+    authorsEn: "by Francisco Amaral",
     unreleased: true,
   },
   {
     title: "WARM UP #01 CONNECT FEST",
     year: "2025",
-    role: "Gravação de vídeo promocional",
+    rolePt: "Gravação de vídeo promocional",
+    roleEn: "Filming of promotional video",
     href: "https://www.instagram.com/reel/DSKyqB-CMT8/",
   },
   {
     title: "CALDAS MIDNIGHT",
     year: "2025",
-    role: "Ator e Operador de Som",
-    authors: "de Francisco Amaral e Manuel Grácio",
+    rolePt: "Ator e Operador de Som",
+    roleEn: "Actor and Sound Operator",
+    authorsPt: "de Francisco Amaral e Manuel Grácio",
+    authorsEn: "by Francisco Amaral and Manuel Grácio",
     href: "https://youtu.be/6Tp0wOSkmx8",
   },
   {
     title: "CONNECT FEST",
     year: "2024",
-    role: "Fotografia de evento",
+    rolePt: "Fotografia de evento",
+    roleEn: "Event photography",
     to: "/outros-projetos/connect-fest",
   },
 ];
 
 const OutrosProjetos = () => {
+  const { t, localizePath, lang } = useLanguage();
   return (
     <>
       <Header />
       <div className="pt-24 px-8 pb-16 max-w-4xl mx-auto">
         <h1 className="text-3xl font-light tracking-widest text-foreground mb-12">
-          OUTROS PROJETOS
+          {t("OUTROS PROJETOS", "OTHER PROJECTS")}
         </h1>
         <p className="text-sm text-muted-foreground mb-10 max-w-2xl">
-          Trabalhos em que participei como colaborador, contratado ou convidado —
-          em diferentes funções (ator, produtor, fotografia de evento, entre outras).
+          {t(
+            "Trabalhos em que participei como colaborador, contratado ou convidado — em diferentes funções (ator, produtor, fotografia de evento, entre outras).",
+            "Projects I took part in as a collaborator, hire or guest — in different roles (actor, producer, event photography, and others)."
+          )}
         </p>
 
         <ul className="divide-y divide-border">
           {items.map((item) => {
+            const role = lang === "en" ? item.roleEn : item.rolePt;
+            const authors = lang === "en" ? item.authorsEn : item.authorsPt;
             const titleNode = (
               <span className="text-base text-foreground hover:opacity-60 transition-opacity">
                 {item.title}
@@ -78,7 +95,7 @@ const OutrosProjetos = () => {
             );
 
             const titleEl = item.to ? (
-              <Link to={item.to}>{titleNode}</Link>
+              <Link to={localizePath(item.to)}>{titleNode}</Link>
             ) : item.href ? (
               <a href={item.href} target="_blank" rel="noopener noreferrer">
                 {titleNode}
@@ -97,12 +114,12 @@ const OutrosProjetos = () => {
                 </span>
                 <div className="col-span-7">
                   {titleEl}
-                  {item.authors && (
-                    <p className="text-xs text-muted-foreground mt-1">{item.authors}</p>
+                  {authors && (
+                    <p className="text-xs text-muted-foreground mt-1">{authors}</p>
                   )}
                 </div>
                 <span className="col-span-3 text-sm text-muted-foreground italic">
-                  {item.role}
+                  {role}
                 </span>
               </li>
             );
