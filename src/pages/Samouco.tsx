@@ -1,5 +1,12 @@
 import Header from "@/components/Header";
 import LightboxImage, { LightboxGallery } from "@/components/LightboxImage";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 import expo1 from "@/assets/samouco/expo1.jpg";
 import expo2 from "@/assets/samouco/expo2.jpg";
 import expo3 from "@/assets/samouco/expo3.jpg";
@@ -13,8 +20,12 @@ import extra2 from "@/assets/samouco/extra2.jpg";
 import extra3 from "@/assets/samouco/extra3.jpg";
 import extra4 from "@/assets/samouco/extra4.jpg";
 import extra5 from "@/assets/samouco/extra5.jpg";
+import projeto1 from "@/assets/samouco/projeto1.jpg";
+import projeto2 from "@/assets/samouco/projeto2.jpg";
+import gazetaCaldas from "@/assets/samouco/gazeta-caldas.jpg";
 
-const expoImages = [expo1, expo2, expo3, expo4, expo5, expo6, expo7, expo8, extra1, extra2, extra3, extra4, extra5];
+const projetoImages = [extra1, extra2, extra3, extra4, extra5, projeto1, projeto2];
+const expoImages = [expo1, expo2, expo3, expo4, expo5, expo6, expo7, expo8];
 
 const Samouco = () => {
   return (
@@ -22,13 +33,35 @@ const Samouco = () => {
       <Header />
       <div className="pt-24 px-5 pb-16 max-w-[1000px] mx-auto">
         <h1 className="text-3xl font-normal text-foreground mb-4">SAMOUCO - O FIM DO MUNDO</h1>
-        <p className="text-base text-muted-foreground leading-relaxed mb-12">
+        <p className="text-base text-muted-foreground leading-relaxed mb-10">
           Do outro lado da capital, cerne do nosso país, debaixo de uma infraestrutura que ditou uma nova era da nossa História, repete-se todos os dias a apanha ilegal da amêijoa-japónica no rio Tejo. Estas imagens resultam de um processo iniciado em 2024, durante a realização de um documentário etnográfico em parceria com Tiago Santos. Através da fotografia, revelam-se relações, tensões e constelações visuais que expõem camadas de trabalho, risco, migração e sobrevivência. Estes marisqueiros, maioritariamente emigrantes, vivem e trabalham em condições precárias, expostos à toxicidade do produto que recolhem e à instabilidade de um quotidiano marcado pela sobrevivência. O rio surge não apenas como cenário, mas como agente ativo, moldando corpos, ritmos e modos de vida. O Tejo aparece aqui como um território ferido e persistente, que absorve, devolve e transforma tudo o que nele habita.
         </p>
 
         <section className="mb-16">
+          <LightboxGallery>
+            <Carousel opts={{ loop: true }} className="w-full">
+              <CarouselContent>
+                {projetoImages.map((img, i) => (
+                  <CarouselItem key={i}>
+                    <div className="aspect-[3/2] overflow-hidden bg-muted">
+                      <LightboxImage
+                        src={img}
+                        alt={`Samouco — fotografia ${i + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
+          </LightboxGallery>
+        </section>
+
+        <section className="mb-16">
           <h2 className="text-xl font-normal text-foreground mb-4">Ficha técnica</h2>
-          <dl className="text-sm leading-relaxed text-muted-foreground space-y-1.5 mb-8">
+          <dl className="text-sm leading-relaxed text-muted-foreground space-y-1.5">
             <div>
               <dt className="inline font-medium text-foreground">Fotografia e Texto: </dt>
               <dd className="inline">Martim Gouveia</dd>
@@ -62,7 +95,7 @@ const Samouco = () => {
 
         <section className="mt-16">
           <h2 className="text-xl font-normal text-foreground mb-4">Imprensa</h2>
-          <ul className="text-sm text-muted-foreground leading-relaxed space-y-2">
+          <ul className="text-sm text-muted-foreground leading-relaxed space-y-3 mb-6">
             <li>
               <a
                 href="https://jornaldascaldas.pt/2026/03/01/martim-gouveia-expoe-no-mercado-do-peixe"
@@ -73,8 +106,20 @@ const Samouco = () => {
                 Jornal das Caldas — "Martim Gouveia expõe no Mercado do Peixe" (01/03/2026)
               </a>
             </li>
-            <li className="italic">Foto da Gazeta das Caldas — em breve</li>
+            <li>
+              <span className="text-foreground">Gazeta das Caldas</span> — "Fotografia no Mercado do Peixe" (26/02/2026)
+            </li>
           </ul>
+          <LightboxGallery>
+            <div className="max-w-md">
+              <LightboxImage
+                src={gazetaCaldas}
+                alt="Gazeta das Caldas — Fotografia no Mercado do Peixe (26/02/2026)"
+                caption="Gazeta das Caldas, 26 de fevereiro de 2026 — “Fotografia no Mercado do Peixe”"
+                className="w-full h-auto"
+              />
+            </div>
+          </LightboxGallery>
         </section>
       </div>
     </>
