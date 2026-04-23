@@ -82,8 +82,8 @@ const OutrosProjetos = () => {
         </h1>
         <p className="text-sm text-muted-foreground mb-10 max-w-2xl">
           {t(
-            "Trabalhos em que participei como colaborador, contratado ou convidado — em diferentes funções (ator, produtor, fotografia de evento, entre outras).",
-            "Projects I took part in as a collaborator, hire or guest — in different roles (actor, producer, event photography, and others)."
+            "Trabalhos em que desempenhei diferentes funções em projetos de colegas e/ou festivais (ator, produção, fotografia de evento, audiovisual, entre outras). Clica nos títulos para aceder aos respetivos links.",
+            "Projects in which I took on different roles in colleagues' work and/or festivals (actor, production, event photography, audiovisual, among others). Click the titles to open the respective links."
           )}
         </p>
 
