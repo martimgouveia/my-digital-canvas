@@ -19,6 +19,7 @@ import Ilha from "./pages/Ilha";
 import Atemporal from "./pages/Atemporal";
 import Samouco from "./pages/Samouco";
 import OutrosProjetos from "./pages/OutrosProjetos";
+import ConnectFest2024 from "./pages/ConnectFest2024";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -66,6 +67,7 @@ const App = () => (
             <Route path="/antiglifo/0002" element={<Antiglifo0002 />} />
             <Route path="/antiglifo/0003" element={<Antiglifo0003 />} />
             <Route path="/outros-projetos" element={<OutrosProjetos />} />
+            <Route path="/outros-projetos/connect-fest" element={<ConnectFest2024 />} />
 
             {/* English routes — same components, language detected via URL */}
             <Route path="/en" element={<Index />} />
@@ -83,6 +85,7 @@ const App = () => (
             <Route path="/en/antiglifo/0002" element={<Antiglifo0002 />} />
             <Route path="/en/antiglifo/0003" element={<Antiglifo0003 />} />
             <Route path="/en/outros-projetos" element={<OutrosProjetos />} />
+            <Route path="/en/outros-projetos/connect-fest" element={<ConnectFest2024 />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>
