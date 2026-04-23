@@ -41,17 +41,17 @@ const items: Item[] = [
     href: "https://www.instagram.com/reel/DUjL9sRiCjP/",
   },
   {
-    title: "FESTIVAL MIL",
-    year: "2025",
-    rolePt: "Voluntário Audiovisual — MIL Lisbon International Music Network. Filmagem de concertos e eventos ao vivo (vídeo em breve)",
-    roleEn: "Audiovisual Volunteer — MIL Lisbon International Music Network. Filmed concerts and live events (video coming soon)",
-  },
-  {
     title: "WARM UP #01 CONNECT FEST",
     year: "2025",
     rolePt: "Gravação de vídeo promocional",
     roleEn: "Filming of promotional video",
     href: "https://www.instagram.com/reel/DSKyqB-CMT8/",
+  },
+  {
+    title: "FESTIVAL MIL",
+    year: "2025",
+    rolePt: "Voluntário Audiovisual — MIL Lisbon International Music Network. Filmagem de concertos e eventos ao vivo (vídeo em breve)",
+    roleEn: "Audiovisual Volunteer — MIL Lisbon International Music Network. Filmed concerts and live events (video coming soon)",
   },
   {
     title: "CALDAS MIDNIGHT",
