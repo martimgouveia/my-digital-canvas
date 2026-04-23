@@ -16,13 +16,6 @@ interface Item {
 
 const items: Item[] = [
   {
-    title: "WARM UP #02 CONNECT FEST",
-    year: "2026",
-    rolePt: "Gravação e edição de vídeo promocional",
-    roleEn: "Filming and editing of promotional video",
-    href: "https://www.instagram.com/reel/DUjL9sRiCjP/",
-  },
-  {
     title: "SEM PRESSÃO",
     year: "2026",
     rolePt: "Ator e Produção",
@@ -39,6 +32,19 @@ const items: Item[] = [
     authorsPt: "de Francisco Amaral",
     authorsEn: "by Francisco Amaral",
     unreleased: true,
+  },
+  {
+    title: "WARM UP #02 CONNECT FEST",
+    year: "2026",
+    rolePt: "Gravação e edição de vídeo promocional",
+    roleEn: "Filming and editing of promotional video",
+    href: "https://www.instagram.com/reel/DUjL9sRiCjP/",
+  },
+  {
+    title: "FESTIVAL MIL",
+    year: "2025",
+    rolePt: "Voluntário Audiovisual — MIL Lisbon International Music Network. Filmagem de concertos e eventos ao vivo (vídeo em breve)",
+    roleEn: "Audiovisual Volunteer — MIL Lisbon International Music Network. Filmed concerts and live events (video coming soon)",
   },
   {
     title: "WARM UP #01 CONNECT FEST",
