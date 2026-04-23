@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, useContext, useRef, ReactNode, useCallback } from "react";
+import { useState, useEffect, createContext, useContext, useRef, ReactNode, useCallback, useMemo } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface GalleryItem {
@@ -22,7 +22,6 @@ interface LightboxGalleryProps {
 export const LightboxGallery = ({ children }: LightboxGalleryProps) => {
   // Ref holds the source-of-truth list (sync, ordered by registration)
   const itemsRef = useRef<GalleryItem[]>([]);
-  const [, forceRender] = useState(0);
   const [openSrc, setOpenSrc] = useState<string | null>(null);
   const [visible, setVisible] = useState(false);
 
@@ -31,7 +30,6 @@ export const LightboxGallery = ({ children }: LightboxGalleryProps) => {
     const existing = list.findIndex((p) => p.src === item.src);
     if (existing === -1) {
       list.push(item);
-      forceRender((n) => n + 1);
     } else {
       // Update metadata (alt/caption) if changed
       list[existing] = item;
@@ -43,7 +41,6 @@ export const LightboxGallery = ({ children }: LightboxGalleryProps) => {
     const idx = list.findIndex((p) => p.src === src);
     if (idx !== -1) {
       list.splice(idx, 1);
-      forceRender((n) => n + 1);
     }
   }, []);
 
@@ -58,6 +55,7 @@ export const LightboxGallery = ({ children }: LightboxGalleryProps) => {
     setOpenSrc((cur) => {
       if (cur === null) return cur;
       const list = itemsRef.current;
+      if (list.length <= 1) return cur;
       const i = list.findIndex((p) => p.src === cur);
       if (i === -1) return cur;
       return list[(i - 1 + list.length) % list.length].src;
@@ -68,6 +66,7 @@ export const LightboxGallery = ({ children }: LightboxGalleryProps) => {
     setOpenSrc((cur) => {
       if (cur === null) return cur;
       const list = itemsRef.current;
+      if (list.length <= 1) return cur;
       const i = list.findIndex((p) => p.src === cur);
       if (i === -1) return cur;
       return list[(i + 1) % list.length].src;
@@ -92,11 +91,12 @@ export const LightboxGallery = ({ children }: LightboxGalleryProps) => {
     }
   }, [openSrc, close, prev, next]);
 
+  const contextValue = useMemo(() => ({ register, unregister, open }), [register, unregister, open]);
   const items = itemsRef.current;
   const current = openSrc !== null ? items.find((p) => p.src === openSrc) ?? null : null;
 
   return (
-    <GalleryContext.Provider value={{ register, unregister, open }}>
+    <GalleryContext.Provider value={contextValue}>
       {children}
       {current && (
         <div
