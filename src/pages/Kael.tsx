@@ -1,14 +1,60 @@
 import Header from "@/components/Header";
+import LightboxImage, { LightboxGallery } from "@/components/LightboxImage";
 import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
+import frame1 from "@/assets/kael/frame1.png";
+import frame2 from "@/assets/kael/frame2.png";
+import frame3 from "@/assets/kael/frame3.png";
+import frame4 from "@/assets/kael/frame4.png";
+import frame5 from "@/assets/kael/frame5.png";
+import frame6 from "@/assets/kael/frame6.png";
+import frame7 from "@/assets/kael/frame7.png";
+
+const frames = [frame1, frame2, frame3, frame4, frame5, frame6, frame7];
 
 const Kael = () => {
   const { t } = useLanguage();
   return (
     <>
       <Header />
-      <div className="pt-24 px-8 pb-16 max-w-4xl mx-auto">
+      <div className="pt-24 px-5 pb-16 max-w-[1000px] mx-auto">
         <h1 className="text-3xl font-light text-foreground mb-2">KAEL</h1>
         <p className="text-sm text-muted-foreground italic mb-8">unreleased</p>
+
+        <section className="mb-12">
+          <LightboxGallery>
+            <Carousel opts={{ loop: true }} className="w-full">
+              <CarouselContent>
+                {frames.map((img, i) => (
+                  <CarouselItem key={i}>
+                    <div className="aspect-video overflow-hidden bg-muted">
+                      <LightboxImage
+                        src={img}
+                        alt={`KAEL — frame ${i + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
+          </LightboxGallery>
+        </section>
+
+        <p className="text-base text-muted-foreground leading-relaxed mb-10">
+          {t(
+            "2071, a inteligência artificial toma conta e, após fugir de um campo de concentração, Kael encontra refúgio num complexo abandonado gerido por MIRA, uma antiga inteligência artificial criada para cuidar de um idoso já falecido. Entre desconfiança e necessidade, Kael é forçado a conviver com a máquina, descobrindo nela uma inesperada humanidade.",
+            "2071, artificial intelligence has taken over and, after escaping from a concentration camp, Kael finds refuge in an abandoned complex run by MIRA, an old artificial intelligence created to care for an elderly man now deceased. Between distrust and necessity, Kael is forced to coexist with the machine, discovering in it an unexpected humanity."
+          )}
+        </p>
 
         <p className="text-sm leading-relaxed text-muted-foreground mb-12">
           {t("Filme de Manuel Grácio e Martim Gouveia.", "A film by Manuel Grácio and Martim Gouveia.")}
@@ -68,11 +114,6 @@ const Kael = () => {
               <dd className="inline">Duarte Correia, Guadalupe Raposo, Rodrigo Sousa</dd>
             </div>
           </dl>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-normal text-foreground mb-4">Frames</h2>
-          <p className="text-sm text-muted-foreground italic">{t("Em breve.", "Coming soon.")}</p>
         </section>
       </div>
     </>
