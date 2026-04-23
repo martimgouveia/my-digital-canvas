@@ -82,7 +82,7 @@ const OutrosProjetos = () => {
         </h1>
         <p className="text-sm text-muted-foreground mb-10 max-w-2xl">
           {t(
-            "Trabalhos em que desempenhei diferentes funções em projetos de colegas e/ou festivais (ator, produção, fotografia de evento, audiovisual, entre outras). Clica nos títulos para aceder aos respetivos links.",
+            "Trabalhos em que desempenhei diferentes funções em projetos de colegas e/ou festivais (ator, produção, fotografia de evento, audiovisual, entre outras). Clique nos títulos para aceder aos respetivos links.",
             "Projects in which I took on different roles in colleagues' work and/or festivals (actor, production, event photography, audiovisual, among others). Click the titles to open the respective links."
           )}
         </p>
