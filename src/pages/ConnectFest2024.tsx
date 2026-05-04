@@ -78,19 +78,18 @@ const ConnectFest2024 = () => {
         </p>
 
         <LightboxGallery>
-          <div className="grid grid-cols-12 auto-rows-[140px] md:auto-rows-[180px] gap-2 md:gap-3">
+          <div className="columns-1 sm:columns-2 md:columns-3 gap-3 [column-fill:_balance]">
             {photos.map((photo, i) => {
-              const { col, row } = layout[i % layout.length];
               const alt = photo.band
                 ? `Connect Fest 2024 — ${photo.band} — ${i + 1}`
                 : `Connect Fest 2024 — ${i + 1}`;
               return (
-                <div key={i} className={`${col} ${row} overflow-hidden bg-muted`}>
+                <div key={i} className="mb-3 break-inside-avoid">
                   <LightboxImage
                     src={photo.src}
                     alt={alt}
                     caption={photo.band || undefined}
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto block"
                   />
                 </div>
               );

@@ -10,10 +10,10 @@ import kael from "@/assets/filme/kael.png";
 const Filme = () => {
   const { t } = useLanguage();
   const projects = [
-    { to: "/filme/flores", title: "Flores", year: "2026", image: flores },
+    // { to: "/filme/flores", title: "Flores", year: "2026", image: flores }, // oculto até ter os frames
     { to: "/filme/kael", title: t("KAEL (unreleased)", "KAEL (unreleased)"), year: "2026", image: kael },
     { to: "/filme/mind-the-gap", title: "mind the gap", year: "2025", image: mindthegap },
-    { to: "/filme/ate-a-mare-subir", title: t("Até a Maré Subir (unreleased)", "Até a Maré Subir (unreleased)"), year: "2025", image: ateamaresubir },
+    // { to: "/filme/ate-a-mare-subir", title: t("Até a Maré Subir (unreleased)", "Até a Maré Subir (unreleased)"), year: "2025", image: ateamaresubir }, // oculto até ter os frames
     { to: "/filme/ilha", title: "ilha", year: "2024", image: ilha },
   ];
   return (
