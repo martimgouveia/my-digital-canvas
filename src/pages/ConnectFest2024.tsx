@@ -7,19 +7,33 @@ import detsaw01 from "@/assets/connect-fest-2024/detsaw-coyote-01.jpg";
 import detsaw02 from "@/assets/connect-fest-2024/detsaw-coyote-02.jpg";
 import detsaw03 from "@/assets/connect-fest-2024/detsaw-coyote-03.jpg";
 import detsaw04 from "@/assets/connect-fest-2024/detsaw-coyote-04.jpg";
+import detsaw05 from "@/assets/connect-fest-2024/detsaw-coyote-05.jpg";
+import detsaw06 from "@/assets/connect-fest-2024/detsaw-coyote-06.jpg";
+import detsaw07 from "@/assets/connect-fest-2024/detsaw-coyote-07.jpg";
+import detsaw08 from "@/assets/connect-fest-2024/detsaw-coyote-08.jpg";
+import detsaw09 from "@/assets/connect-fest-2024/detsaw-coyote-09.jpg";
 
 interface Photo {
   src: string;
   band: string;
 }
 
-// Det·saW Coyote (4) + placeholders para Det·saW Coyote/Parte Fraca restantes (13) = 17
-const photos: Photo[] = [
+// Det·saW Coyote (9) + placeholders restantes (8) = 17
+const detsawPhotos: Photo[] = [
   { src: detsaw01, band: "Det·saW Coyote" },
   { src: detsaw02, band: "Det·saW Coyote" },
   { src: detsaw03, band: "Det·saW Coyote" },
   { src: detsaw04, band: "Det·saW Coyote" },
-  ...Array.from({ length: 13 }, () => ({ src: "/placeholder.svg", band: "" })),
+  { src: detsaw05, band: "Det·saW Coyote" },
+  { src: detsaw06, band: "Det·saW Coyote" },
+  { src: detsaw07, band: "Det·saW Coyote" },
+  { src: detsaw08, band: "Det·saW Coyote" },
+  { src: detsaw09, band: "Det·saW Coyote" },
+];
+
+const photos: Photo[] = [
+  ...detsawPhotos,
+  ...Array.from({ length: 17 - detsawPhotos.length }, () => ({ src: "/placeholder.svg", band: "" })),
 ];
 
 // Padrão pseudo-aleatório (determinístico) de spans para criar uma grelha tipo mosaico.
