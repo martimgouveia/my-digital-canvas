@@ -12,13 +12,14 @@ import detsaw06 from "@/assets/connect-fest-2024/detsaw-coyote-06.jpg";
 import detsaw07 from "@/assets/connect-fest-2024/detsaw-coyote-07.jpg";
 import detsaw08 from "@/assets/connect-fest-2024/detsaw-coyote-08.jpg";
 import detsaw09 from "@/assets/connect-fest-2024/detsaw-coyote-09.jpg";
+import detsaw10 from "@/assets/connect-fest-2024/detsaw-coyote-10.jpg";
 
 interface Photo {
   src: string;
   band: string;
 }
 
-// Det·saW Coyote (9) + placeholders restantes (8) = 17
+// Det·saW Coyote (10) + placeholders restantes (7) = 17
 const detsawPhotos: Photo[] = [
   { src: detsaw01, band: "Det·saW Coyote" },
   { src: detsaw02, band: "Det·saW Coyote" },
@@ -29,6 +30,7 @@ const detsawPhotos: Photo[] = [
   { src: detsaw07, band: "Det·saW Coyote" },
   { src: detsaw08, band: "Det·saW Coyote" },
   { src: detsaw09, band: "Det·saW Coyote" },
+  { src: detsaw10, band: "Det·saW Coyote" },
 ];
 
 const photos: Photo[] = [
