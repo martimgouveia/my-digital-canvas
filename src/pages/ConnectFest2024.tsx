@@ -17,6 +17,9 @@ import parteFraca01 from "@/assets/connect-fest-2024/parte-fraca-01.jpg";
 import parteFraca02 from "@/assets/connect-fest-2024/parte-fraca-02.jpg";
 import parteFraca03 from "@/assets/connect-fest-2024/parte-fraca-03.jpg";
 import parteFraca04 from "@/assets/connect-fest-2024/parte-fraca-04.jpg";
+import parteFraca05 from "@/assets/connect-fest-2024/parte-fraca-05.jpg";
+import parteFraca06 from "@/assets/connect-fest-2024/parte-fraca-06.jpg";
+import parteFraca07 from "@/assets/connect-fest-2024/parte-fraca-07.jpg";
 
 interface Photo {
   src: string;
@@ -42,6 +45,9 @@ const parteFracaPhotos: Photo[] = [
   { src: parteFraca02, band: "Parte Fraca" },
   { src: parteFraca03, band: "Parte Fraca" },
   { src: parteFraca04, band: "Parte Fraca" },
+  { src: parteFraca05, band: "Parte Fraca" },
+  { src: parteFraca06, band: "Parte Fraca" },
+  { src: parteFraca07, band: "Parte Fraca" },
 ];
 
 const realPhotos = [...detsawPhotos, ...parteFracaPhotos];
