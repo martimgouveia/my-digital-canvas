@@ -26,7 +26,7 @@ interface Photo {
   band: string;
 }
 
-// Det·saW Coyote (10) + placeholders restantes (7) = 17
+// Det·saW Coyote (10) + Parte Fraca (7) = 17
 const detsawPhotos: Photo[] = [
   { src: detsaw01, band: "Det·saW Coyote" },
   { src: detsaw02, band: "Det·saW Coyote" },
@@ -50,33 +50,7 @@ const parteFracaPhotos: Photo[] = [
   { src: parteFraca07, band: "Parte Fraca" },
 ];
 
-const realPhotos = [...detsawPhotos, ...parteFracaPhotos];
-
-const photos: Photo[] = [
-  ...realPhotos,
-  ...Array.from({ length: Math.max(0, 17 - realPhotos.length) }, () => ({ src: "/placeholder.svg", band: "" })),
-];
-
-// Padrão pseudo-aleatório (determinístico) de spans para criar uma grelha tipo mosaico.
-const layout: { col: string; row: string }[] = [
-  { col: "col-span-6", row: "row-span-2" },
-  { col: "col-span-3", row: "row-span-1" },
-  { col: "col-span-3", row: "row-span-2" },
-  { col: "col-span-3", row: "row-span-1" },
-  { col: "col-span-4", row: "row-span-2" },
-  { col: "col-span-4", row: "row-span-1" },
-  { col: "col-span-4", row: "row-span-2" },
-  { col: "col-span-3", row: "row-span-1" },
-  { col: "col-span-5", row: "row-span-2" },
-  { col: "col-span-4", row: "row-span-1" },
-  { col: "col-span-3", row: "row-span-1" },
-  { col: "col-span-6", row: "row-span-2" },
-  { col: "col-span-3", row: "row-span-1" },
-  { col: "col-span-3", row: "row-span-2" },
-  { col: "col-span-4", row: "row-span-1" },
-  { col: "col-span-4", row: "row-span-2" },
-  { col: "col-span-4", row: "row-span-1" },
-];
+const photos: Photo[] = [...detsawPhotos, ...parteFracaPhotos];
 
 const ConnectFest2024 = () => {
   const { t } = useLanguage();
