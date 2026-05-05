@@ -13,6 +13,10 @@ import detsaw07 from "@/assets/connect-fest-2024/detsaw-coyote-07.jpg";
 import detsaw08 from "@/assets/connect-fest-2024/detsaw-coyote-08.jpg";
 import detsaw09 from "@/assets/connect-fest-2024/detsaw-coyote-09.jpg";
 import detsaw10 from "@/assets/connect-fest-2024/detsaw-coyote-10.jpg";
+import parteFraca01 from "@/assets/connect-fest-2024/parte-fraca-01.jpg";
+import parteFraca02 from "@/assets/connect-fest-2024/parte-fraca-02.jpg";
+import parteFraca03 from "@/assets/connect-fest-2024/parte-fraca-03.jpg";
+import parteFraca04 from "@/assets/connect-fest-2024/parte-fraca-04.jpg";
 
 interface Photo {
   src: string;
@@ -33,9 +37,18 @@ const detsawPhotos: Photo[] = [
   { src: detsaw10, band: "Det·saW Coyote" },
 ];
 
+const parteFracaPhotos: Photo[] = [
+  { src: parteFraca01, band: "Parte Fraca" },
+  { src: parteFraca02, band: "Parte Fraca" },
+  { src: parteFraca03, band: "Parte Fraca" },
+  { src: parteFraca04, band: "Parte Fraca" },
+];
+
+const realPhotos = [...detsawPhotos, ...parteFracaPhotos];
+
 const photos: Photo[] = [
-  ...detsawPhotos,
-  ...Array.from({ length: 17 - detsawPhotos.length }, () => ({ src: "/placeholder.svg", band: "" })),
+  ...realPhotos,
+  ...Array.from({ length: Math.max(0, 17 - realPhotos.length) }, () => ({ src: "/placeholder.svg", band: "" })),
 ];
 
 // Padrão pseudo-aleatório (determinístico) de spans para criar uma grelha tipo mosaico.
